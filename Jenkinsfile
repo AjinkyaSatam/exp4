@@ -2,22 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('clone') {
+        stage('Clone') {
             steps {
-                git branch: 'main', credentialsId: '92dbf79f-9e4b-4e99-a6ba-42ebdec56926', url: 'https://github.com/AjinkyaSatam/exp4.git'
-            } 
+               git branch: 'main', credentialsId: '08db50ce-e134-41db-9c22-1ba28e6fc957', url: 'https://github.com/TejasRawool186/batch-b4.git'
+            }
         }
-            stage('clone') {
-                steps {
-                git branch: 'main', credentialsId: '92dbf79f-9e4b-4e99-a6ba-42ebdec56926', url: 'https://github.com/AjinkyaSatam/exp4.git'
+      stage('Compile') {
+            steps {
+                bat "javac HelloWorld.java"
             }
-            }
-                stage('clone') {
-                    steps {
-                git branch: 'main', credentialsId: '92dbf79f-9e4b-4e99-a6ba-42ebdec56926', url: 'https://github.com/AjinkyaSatam/exp4.git'
+        }
+      stage('Run') {
+            steps {
+                bat "java HelloWorld"
             }
         }
     }
 }
-}
+
 
